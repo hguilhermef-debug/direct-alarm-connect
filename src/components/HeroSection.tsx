@@ -20,15 +20,28 @@ export const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-20 md:py-32">
         <div className="max-w-4xl">
+          {/* Offer Badge */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-3 bg-accent text-white rounded-full px-5 py-2.5 mb-6 shadow-lg"
+          >
+            <span className="font-bold text-lg">🔥 OFERTA ESPECIAL</span>
+            <span className="bg-white text-accent px-3 py-1 rounded-full text-sm font-bold">
+              Instalação Grátis
+            </span>
+          </motion.div>
+
           {/* Trust Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 bg-accent/20 backdrop-blur-sm border border-accent/40 rounded-full px-4 py-2 mb-6"
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="flex items-center gap-2 mb-4"
           >
             <Shield className="w-5 h-5 text-accent" />
-            <span className="text-white/90 text-sm font-medium">
+            <span className="text-white/80 text-sm font-medium">
               Maior empresa de segurança eletrônica da América Latina
             </span>
           </motion.div>
