@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { WhatsAppButton } from "./WhatsAppButton";
 import { Users, Calendar, Headphones, MapPin } from "lucide-react";
+import familyImage from "@/assets/family-protected.jpg";
 
 const stats = [
   { icon: Users, value: "+140.000", label: "Clientes atendidos" },
@@ -11,10 +12,10 @@ const stats = [
 
 export const SocialProofSection = () => {
   return (
-    <section className="py-20 bg-card">
+    <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-16">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -22,44 +23,57 @@ export const SocialProofSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="text-center p-6 rounded-2xl bg-secondary/50 border border-border"
+              className="text-center p-6 rounded-2xl bg-primary border border-border hover:border-accent/50 transition-all duration-300"
             >
               <stat.icon className="w-8 h-8 text-accent mx-auto mb-3" />
-              <p className="text-3xl md:text-4xl font-extrabold text-primary mb-1">
+              <p className="text-3xl md:text-4xl font-extrabold text-white mb-1">
                 {stat.value}
               </p>
-              <p className="text-muted-foreground text-sm">{stat.label}</p>
+              <p className="text-white/60 text-sm">{stat.label}</p>
             </motion.div>
           ))}
         </div>
 
-        {/* Authority Text */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-center mb-10"
-        >
-          <p className="text-xl md:text-2xl text-foreground font-medium max-w-3xl mx-auto">
-            Uma das maiores empresas de{" "}
-            <span className="text-primary font-bold">segurança eletrônica</span>{" "}
-            da América Latina.
-          </p>
-        </motion.div>
+        {/* Image + Text Section */}
+        <div className="grid md:grid-cols-2 gap-10 items-center mb-12">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative"
+          >
+            <img
+              src={familyImage}
+              alt="Família protegida em casa"
+              className="rounded-2xl shadow-2xl w-full"
+            />
+            <div className="absolute -bottom-4 -right-4 bg-accent text-white px-6 py-3 rounded-xl font-bold text-lg shadow-lg">
+              30+ Anos
+            </div>
+          </motion.div>
 
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: 0.5 }}
-          className="text-center"
-        >
-          <WhatsAppButton>
-            SOLICITAR ORÇAMENTO AGORA
-          </WhatsAppButton>
-        </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              A maior empresa de{" "}
+              <span className="text-accent">segurança eletrônica</span>{" "}
+              da América Latina
+            </h2>
+            <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
+              Com mais de 30 anos de atuação e mais de 140 mil clientes atendidos, 
+              oferecemos tecnologia de ponta, atendimento regionalizado e uma estrutura 
+              preparada para inibir, detectar e agir em qualquer situação de risco.
+            </p>
+            <WhatsAppButton>
+              Solicite seu Orçamento Agora
+            </WhatsAppButton>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

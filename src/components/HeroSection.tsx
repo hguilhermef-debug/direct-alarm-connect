@@ -1,19 +1,20 @@
 import { motion } from "framer-motion";
 import { WhatsAppButton } from "./WhatsAppButton";
 import { Shield, Clock, Headphones } from "lucide-react";
-import heroImage from "@/assets/hero-security.jpg";
+import heroImage from "@/assets/hero-house-security.jpg";
 
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-hero-gradient">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-hero">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
           src={heroImage}
-          alt="Central de monitoramento de segurança"
-          className="w-full h-full object-cover opacity-30"
+          alt="Casa moderna protegida com sistema de segurança"
+          className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-hero/95 via-hero/80 to-hero/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/85 to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40" />
       </div>
 
       {/* Content */}
@@ -24,10 +25,10 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 bg-primary/20 backdrop-blur-sm border border-primary/30 rounded-full px-4 py-2 mb-6"
+            className="inline-flex items-center gap-2 bg-accent/20 backdrop-blur-sm border border-accent/40 rounded-full px-4 py-2 mb-6"
           >
             <Shield className="w-5 h-5 text-accent" />
-            <span className="text-primary-foreground/90 text-sm font-medium">
+            <span className="text-white/90 text-sm font-medium">
               Maior empresa de segurança eletrônica da América Latina
             </span>
           </motion.div>
@@ -37,10 +38,10 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary-foreground leading-tight mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6"
           >
             Proteja sua casa ou empresa{" "}
-            <span className="text-accent">24 horas por dia</span> com monitoramento profissional e resposta imediata
+            <span className="text-gradient-orange">24 horas por dia</span> com monitoramento profissional
           </motion.h1>
 
           {/* Subheadline */}
@@ -48,7 +49,7 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl md:text-2xl text-primary-foreground/80 mb-8 max-w-3xl"
+            className="text-xl md:text-2xl text-white/80 mb-10 max-w-3xl"
           >
             Alarmes monitorados, câmeras inteligentes e suporte humano 24h. 
             Tecnologia completa sem precisar comprar equipamentos.
@@ -59,10 +60,10 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mb-6"
+            className="mb-8"
           >
             <WhatsAppButton variant="hero">
-              SOLICITAR ORÇAMENTO AGORA NO WHATSAPP
+              Solicite seu Orçamento Agora
             </WhatsAppButton>
           </motion.div>
 
@@ -71,18 +72,18 @@ export const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-wrap items-center gap-4 text-primary-foreground/70 text-sm"
+            className="flex flex-wrap items-center gap-4 md:gap-6 text-white/70 text-sm"
           >
             <span className="flex items-center gap-2">
               <Clock className="w-4 h-4 text-accent" />
               Atendimento imediato
             </span>
-            <span className="hidden md:inline text-primary-foreground/40">•</span>
+            <span className="hidden md:inline text-white/40">•</span>
             <span className="flex items-center gap-2">
               <Shield className="w-4 h-4 text-accent" />
               Sem compromisso
             </span>
-            <span className="hidden md:inline text-primary-foreground/40">•</span>
+            <span className="hidden md:inline text-white/40">•</span>
             <span className="flex items-center gap-2">
               <Headphones className="w-4 h-4 text-accent" />
               100% gratuito
