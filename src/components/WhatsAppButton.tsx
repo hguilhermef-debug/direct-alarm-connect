@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MessageCircle } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 interface WhatsAppButtonProps {
   variant?: "primary" | "hero" | "floating";
@@ -17,7 +17,7 @@ export const WhatsAppButton = ({ variant = "primary", className = "", children }
   const variants = {
     primary: "px-6 py-4 rounded-lg text-base md:text-lg shadow-lg hover:shadow-xl hover:scale-105 animate-pulse-glow",
     hero: "px-8 py-5 rounded-xl text-lg md:text-xl shadow-2xl hover:scale-105 animate-pulse-glow",
-    floating: "w-16 h-16 rounded-full shadow-2xl hover:scale-110 fixed bottom-6 right-6 z-50",
+    floating: "w-16 h-16 rounded-full shadow-2xl hover:scale-110 fixed bottom-6 right-6 z-50 animate-pulse-glow",
   };
 
   return (
@@ -32,7 +32,7 @@ export const WhatsAppButton = ({ variant = "primary", className = "", children }
       whileHover={{ scale: variant === "floating" ? 1.1 : 1.05 }}
       whileTap={{ scale: 0.98 }}
     >
-      <MessageCircle className={variant === "floating" ? "w-7 h-7" : "w-5 h-5 md:w-6 md:h-6"} />
+      <FaWhatsapp className={variant === "floating" ? "w-8 h-8" : "w-5 h-5 md:w-6 md:h-6"} />
       {children}
     </motion.a>
   );

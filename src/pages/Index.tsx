@@ -1,5 +1,6 @@
 import { HeroSection } from "@/components/HeroSection";
 import { SocialProofSection } from "@/components/SocialProofSection";
+import { SegmentsSection } from "@/components/SegmentsSection";
 import { PainPointsSection } from "@/components/PainPointsSection";
 import { SolutionsSection } from "@/components/SolutionsSection";
 import { DifferentialsSection } from "@/components/DifferentialsSection";
@@ -48,6 +49,7 @@ const Index = () => {
       <main className="overflow-x-hidden">
         <HeroSection />
         <SocialProofSection />
+        <SegmentsSection />
         <PainPointsSection />
         <SolutionsSection />
         <DifferentialsSection />
