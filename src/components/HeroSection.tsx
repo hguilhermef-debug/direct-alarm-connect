@@ -19,7 +19,7 @@ export const HeroSection = () => {
       </div>
 
       {/* Header with Logo */}
-      <div className="relative z-10 container mx-auto px-4 pt-10 md:pt-8 flex justify-center md:justify-start">
+      <div className="relative z-10 container mx-auto px-4 pt-10 md:pt-8">
         <motion.img
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
