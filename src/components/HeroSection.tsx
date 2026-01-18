@@ -55,26 +55,11 @@ export const HeroSection = () => {
             Tecnologia completa sem precisar comprar equipamentos.
           </motion.p>
 
-          {/* Offer Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.25 }}
-            className="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-3 bg-gradient-to-r from-accent to-orange-600 text-white rounded-2xl sm:rounded-full px-4 sm:px-5 py-3 sm:py-2.5 mb-6 shadow-xl border border-orange-400/30"
-          >
-            <span className="font-bold text-base sm:text-lg flex items-center gap-2">
-              <span className="text-xl">🔥</span> OFERTA ESPECIAL
-            </span>
-            <span className="bg-white text-accent px-3 py-1.5 rounded-full text-xs sm:text-sm font-bold text-center leading-tight">
-              Equipamento Grátis + 50% OFF na Instalação
-            </span>
-          </motion.div>
-
           {/* CTA Button */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.35 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
             className="mb-8"
           >
             <WhatsAppButton variant="hero">
@@ -86,7 +71,7 @@ export const HeroSection = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-wrap items-center gap-4 md:gap-6 text-white/70 text-sm"
           >
             <span className="flex items-center gap-2">
@@ -106,9 +91,6 @@ export const HeroSection = () => {
           </motion.div>
         </div>
       </div>
-
-      {/* Decorative Elements */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
 };

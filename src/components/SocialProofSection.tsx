@@ -14,6 +14,24 @@ export const SocialProofSection = () => {
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
+        {/* Offer Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="flex justify-center mb-10"
+        >
+          <div className="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-3 bg-gradient-to-r from-accent to-orange-600 text-white rounded-2xl sm:rounded-full px-5 sm:px-6 py-3 sm:py-3 shadow-xl border border-orange-400/30">
+            <span className="font-bold text-base sm:text-lg flex items-center gap-2">
+              <span className="text-xl">🔥</span> OFERTA ESPECIAL
+            </span>
+            <span className="bg-white text-accent px-3 py-1.5 rounded-full text-xs sm:text-sm font-bold text-center leading-tight">
+              Equipamento Grátis + 50% OFF na Instalação
+            </span>
+          </div>
+        </motion.div>
+
         {/* Stats Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-16">
           {stats.map((stat, index) => (
