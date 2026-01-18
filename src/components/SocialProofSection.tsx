@@ -39,9 +39,9 @@ export const SocialProofSection = () => {
               key={stat.label}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="text-center p-6 rounded-2xl bg-primary border border-border hover:border-accent/50 transition-all duration-300"
+              className="text-center p-6 rounded-2xl bg-primary border border-border hover:border-accent/50"
             >
               <stat.icon className="w-8 h-8 text-accent mx-auto mb-3" />
               <p className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-1 whitespace-nowrap">
