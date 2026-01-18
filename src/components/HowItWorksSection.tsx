@@ -62,41 +62,38 @@ export const HowItWorksSection = () => {
             </div>
           </div>
 
-          {/* Mobile Layout - Compact vertical timeline */}
-          <div className="md:hidden relative flex">
-            {/* Vertical Line */}
-            <div className="absolute left-[27px] top-5 bottom-5 w-0.5 bg-gradient-to-b from-accent via-accent to-accent/30" />
-            
-            {/* Steps Column */}
-            <div className="flex flex-col gap-2 w-full">
-              {steps.map((step, index) => (
-                <motion.div
-                  key={step.step}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.08 }}
-                  className="flex items-center gap-3"
+          {/* Mobile Layout - Centered vertical with connecting lines */}
+          <div className="md:hidden flex flex-col items-center">
+            {steps.map((step, index) => (
+              <motion.div
+                key={step.step}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
+                className="flex flex-col items-center"
+              >
+                {/* Icon */}
+                <div 
+                  className="relative z-10 w-14 h-14 rounded-xl flex items-center justify-center shadow-lg"
+                  style={{ background: "linear-gradient(135deg, hsl(25, 95%, 53%) 0%, hsl(20, 95%, 45%) 100%)" }}
                 >
-                  {/* Icon */}
-                  <div 
-                    className="relative z-10 w-14 h-14 shrink-0 rounded-xl flex items-center justify-center shadow-lg"
-                    style={{ background: "linear-gradient(135deg, hsl(25, 95%, 53%) 0%, hsl(20, 95%, 45%) 100%)" }}
-                  >
-                    <step.icon className="w-6 h-6 text-white" />
-                    <span className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-white text-primary text-xs font-bold flex items-center justify-center shadow">
-                      {step.step}
-                    </span>
-                  </div>
-                  
-                  {/* Text */}
-                  <div className="flex-1">
-                    <h3 className="font-bold text-white text-sm">{step.title}</h3>
-                    <p className="text-xs text-white/60">{step.description}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+                  <step.icon className="w-6 h-6 text-white" />
+                  <span className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-white text-primary text-xs font-bold flex items-center justify-center shadow">
+                    {step.step}
+                  </span>
+                </div>
+                
+                {/* Text */}
+                <h3 className="font-bold text-white text-sm mt-2">{step.title}</h3>
+                <p className="text-xs text-white/60">{step.description}</p>
+                
+                {/* Connecting Line */}
+                {index < steps.length - 1 && (
+                  <div className="w-0.5 h-4 bg-gradient-to-b from-accent to-accent/50 my-2" />
+                )}
+              </motion.div>
+            ))}
           </div>
         </div>
 
