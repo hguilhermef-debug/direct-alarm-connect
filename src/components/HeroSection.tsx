@@ -2,10 +2,11 @@ import { motion } from "framer-motion";
 import { WhatsAppButton } from "./WhatsAppButton";
 import { Shield, Clock, Headphones } from "lucide-react";
 import heroImage from "@/assets/hero-house-security.jpg";
+import emiveLogo from "@/assets/emive-logo.png";
 
 export const HeroSection = () => {
   return (
-    <section className="relative h-screen flex items-center overflow-hidden bg-black">
+    <section className="relative h-screen flex flex-col overflow-hidden bg-black">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
@@ -17,8 +18,20 @@ export const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40" />
       </div>
 
+      {/* Header with Logo */}
+      <div className="relative z-10 container mx-auto px-4 pt-6">
+        <motion.img
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          src={emiveLogo}
+          alt="Emive Segurança Eletrônica"
+          className="h-12 md:h-16 w-auto"
+        />
+      </div>
+
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 py-20 md:py-32">
+      <div className="relative z-10 container mx-auto px-4 flex-1 flex items-center">
         <div className="max-w-4xl">
           {/* Trust Badge */}
           <motion.div
