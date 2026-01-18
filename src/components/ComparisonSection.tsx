@@ -64,53 +64,56 @@ export const ComparisonSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto"
+          className="max-w-5xl mx-auto"
         >
-          {/* Table Header */}
-          <div className="grid grid-cols-3 gap-4 mb-4 px-4">
-            <div className="text-white/40 text-sm font-medium">Recurso</div>
-            <div className="text-center">
-              <span className="text-accent font-bold text-lg">Emive</span>
+          {/* Table Container */}
+          <div className="rounded-2xl border border-white/10 overflow-hidden bg-[hsl(var(--card-dark))]/50 backdrop-blur-sm">
+            {/* Table Header */}
+            <div className="grid grid-cols-[1fr_1fr_1fr] bg-white/5 border-b border-white/10">
+              <div className="p-4 md:p-6">
+                <span className="text-white/50 text-sm font-medium uppercase tracking-wider">Recurso</span>
+              </div>
+              <div className="p-4 md:p-6 text-center border-x border-white/10 bg-accent/5">
+                <span className="text-accent font-bold text-lg">Emive</span>
+              </div>
+              <div className="p-4 md:p-6 text-center">
+                <span className="text-white/40 font-medium">Outros</span>
+              </div>
             </div>
-            <div className="text-center">
-              <span className="text-white/40 font-medium">Outros</span>
-            </div>
-          </div>
 
-          {/* Comparison Rows */}
-          <div className="space-y-3">
+            {/* Comparison Rows */}
             {comparisons.map((item, index) => (
               <motion.div
                 key={item.feature}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.08 }}
-                className="grid grid-cols-3 gap-4 p-4 rounded-xl bg-[hsl(var(--card-dark))] border border-white/5 hover:border-accent/30 transition-colors"
+                transition={{ duration: 0.3, delay: index * 0.05 }}
+                className="grid grid-cols-[1fr_1fr_1fr] border-b border-white/5 last:border-b-0 hover:bg-white/[0.02] transition-colors"
               >
                 {/* Feature Name */}
-                <div className="flex items-center">
+                <div className="p-4 md:p-5 flex items-center">
                   <span className="text-white font-medium text-sm md:text-base">
                     {item.feature}
                   </span>
                 </div>
 
                 {/* Emive */}
-                <div className="flex items-center justify-center gap-2">
-                  <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
+                <div className="p-4 md:p-5 flex items-center justify-center gap-3 border-x border-white/5 bg-accent/[0.03]">
+                  <div className="w-7 h-7 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
                     <Check className="w-4 h-4 text-accent" />
                   </div>
-                  <span className="text-white/80 text-xs md:text-sm hidden sm:block">
+                  <span className="text-white/90 text-xs md:text-sm hidden md:block flex-1">
                     {item.emive}
                   </span>
                 </div>
 
                 {/* Competitor */}
-                <div className="flex items-center justify-center gap-2">
-                  <div className="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0">
+                <div className="p-4 md:p-5 flex items-center justify-center gap-3">
+                  <div className="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0">
                     <X className="w-4 h-4 text-white/30" />
                   </div>
-                  <span className="text-white/40 text-xs md:text-sm hidden sm:block">
+                  <span className="text-white/40 text-xs md:text-sm hidden md:block flex-1">
                     {item.competitor}
                   </span>
                 </div>
@@ -118,25 +121,27 @@ export const ComparisonSection = () => {
             ))}
           </div>
 
-          {/* Mobile: Show descriptions on tap/below */}
-          <div className="sm:hidden mt-6 space-y-4">
+          {/* Mobile: Expandable details */}
+          <div className="md:hidden mt-6 space-y-3">
             {comparisons.map((item, index) => (
               <motion.div
                 key={`mobile-${item.feature}`}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
-                className="p-4 rounded-lg bg-[hsl(var(--card-dark))] border border-white/5"
+                className="p-4 rounded-xl bg-[hsl(var(--card-dark))] border border-white/10"
               >
-                <p className="text-accent font-semibold text-sm mb-2">{item.feature}</p>
-                <div className="flex items-start gap-2 mb-2">
-                  <Check className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
-                  <span className="text-white/80 text-sm">{item.emive}</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <X className="w-4 h-4 text-white/30 flex-shrink-0 mt-0.5" />
-                  <span className="text-white/40 text-sm">{item.competitor}</span>
+                <p className="text-accent font-semibold text-sm mb-3">{item.feature}</p>
+                <div className="space-y-2">
+                  <div className="flex items-start gap-3 p-2 rounded-lg bg-accent/10">
+                    <Check className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
+                    <span className="text-white/90 text-sm">{item.emive}</span>
+                  </div>
+                  <div className="flex items-start gap-3 p-2 rounded-lg bg-white/5">
+                    <X className="w-4 h-4 text-white/30 flex-shrink-0 mt-0.5" />
+                    <span className="text-white/40 text-sm">{item.competitor}</span>
+                  </div>
                 </div>
               </motion.div>
             ))}
