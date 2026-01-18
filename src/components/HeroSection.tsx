@@ -25,11 +25,13 @@ export const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-3 bg-accent text-white rounded-full px-5 py-2.5 mb-6 shadow-lg"
+            className="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-3 bg-gradient-to-r from-accent to-orange-600 text-white rounded-2xl sm:rounded-full px-4 sm:px-5 py-3 sm:py-2.5 mb-6 shadow-xl border border-orange-400/30"
           >
-            <span className="font-bold text-lg">🔥 OFERTA ESPECIAL</span>
-            <span className="bg-white text-accent px-3 py-1 rounded-full text-sm font-bold">
-              Instalação Grátis
+            <span className="font-bold text-base sm:text-lg flex items-center gap-2">
+              <span className="text-xl">🔥</span> OFERTA ESPECIAL
+            </span>
+            <span className="bg-white text-accent px-3 py-1.5 rounded-full text-xs sm:text-sm font-bold text-center leading-tight">
+              Equipamento Grátis + 50% OFF na Instalação
             </span>
           </motion.div>
 
