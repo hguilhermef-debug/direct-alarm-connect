@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { WhatsAppButton } from "./WhatsAppButton";
 import { Shield, Clock, Phone } from "lucide-react";
 import heroImage from "@/assets/hero-house-security.jpg";
+import emiveLogo from "@/assets/emive-logo.png";
 
 export const FinalCTASection = () => {
   return (
@@ -31,6 +32,17 @@ export const FinalCTASection = () => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto"
         >
+          {/* Logo */}
+          <motion.img
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            src={emiveLogo}
+            alt="Emive Segurança Eletrônica"
+            className="h-14 md:h-20 w-auto mx-auto mb-8 drop-shadow-lg"
+          />
+
           {/* Urgency Badge */}
           <motion.div
             initial={{ scale: 0.9 }}
