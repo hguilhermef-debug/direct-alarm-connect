@@ -92,14 +92,14 @@ export const ComparisonSection = () => {
                 className="grid grid-cols-[1fr_1fr_1fr] border-b border-white/5 last:border-b-0 hover:bg-white/[0.02] transition-colors"
               >
                 {/* Feature Name */}
-                <div className="p-4 md:p-5 flex items-center">
+                <div className="p-4 md:p-5 flex items-center min-h-[72px] md:min-h-0">
                   <span className="text-white font-medium text-sm md:text-base">
                     {item.feature}
                   </span>
                 </div>
 
                 {/* Emive */}
-                <div className="p-4 md:p-5 flex items-center justify-center gap-3 border-x border-white/5 bg-accent/[0.03]">
+                <div className="p-4 md:p-5 flex items-center justify-center gap-3 border-x border-white/5 bg-accent/[0.03] min-h-[72px] md:min-h-0">
                   <div className="w-7 h-7 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
                     <Check className="w-4 h-4 text-accent" />
                   </div>
@@ -109,7 +109,7 @@ export const ComparisonSection = () => {
                 </div>
 
                 {/* Competitor */}
-                <div className="p-4 md:p-5 flex items-center justify-center gap-3">
+                <div className="p-4 md:p-5 flex items-center justify-center gap-3 min-h-[72px] md:min-h-0">
                   <div className="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0">
                     <X className="w-4 h-4 text-white/30" />
                   </div>
