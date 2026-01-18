@@ -19,14 +19,14 @@ export const HeroSection = () => {
       </div>
 
       {/* Header with Logo */}
-      <div className="relative z-10 container mx-auto px-4 pt-6">
+      <div className="relative z-10 container mx-auto px-4 pt-6 md:pt-8">
         <motion.img
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           src={emiveLogo}
           alt="Emive Segurança Eletrônica"
-          className="h-12 md:h-16 w-auto"
+          className="h-16 md:h-20 lg:h-24 w-auto drop-shadow-lg"
         />
       </div>
 
