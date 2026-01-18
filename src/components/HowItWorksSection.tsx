@@ -65,16 +65,16 @@ export const HowItWorksSection = () => {
           {/* Mobile Layout - Centered vertical with connecting lines */}
           <div className="md:hidden flex flex-col items-center">
             {steps.map((step, index) => (
-              <motion.div
+              <div
                 key={step.step}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.08 }}
                 className="flex flex-col items-center"
               >
                 {/* Icon */}
-                <div 
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 0.3, delay: index * 0.05 }}
                   className="relative z-10 w-14 h-14 rounded-xl flex items-center justify-center shadow-lg"
                   style={{ background: "linear-gradient(135deg, hsl(25, 95%, 53%) 0%, hsl(20, 95%, 45%) 100%)" }}
                 >
@@ -82,7 +82,7 @@ export const HowItWorksSection = () => {
                   <span className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-white text-primary text-xs font-bold flex items-center justify-center shadow">
                     {step.step}
                   </span>
-                </div>
+                </motion.div>
                 
                 {/* Text */}
                 <h3 className="font-bold text-white text-sm mt-2">{step.title}</h3>
@@ -92,7 +92,7 @@ export const HowItWorksSection = () => {
                 {index < steps.length - 1 && (
                   <div className="w-0.5 h-4 bg-gradient-to-b from-accent to-accent/50 my-2" />
                 )}
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
