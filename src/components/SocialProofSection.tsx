@@ -87,9 +87,11 @@ export const SocialProofSection = () => {
               oferecemos tecnologia de ponta, atendimento regionalizado e uma estrutura 
               preparada para inibir, detectar e agir em qualquer situação de risco.
             </p>
-            <WhatsAppButton>
-              Solicite seu Orçamento Agora
-            </WhatsAppButton>
+            <div className="flex justify-center md:justify-start">
+              <WhatsAppButton>
+                Solicite seu Orçamento Agora
+              </WhatsAppButton>
+            </div>
           </motion.div>
         </div>
       </div>

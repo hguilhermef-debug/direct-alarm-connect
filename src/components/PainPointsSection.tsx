@@ -78,9 +78,11 @@ export const PainPointsSection = () => {
               </p>
             </motion.div>
 
-            <WhatsAppButton>
-              Solicite seu Orçamento Agora
-            </WhatsAppButton>
+            <div className="flex justify-center md:justify-start">
+              <WhatsAppButton>
+                Solicite seu Orçamento Agora
+              </WhatsAppButton>
+            </div>
           </div>
 
           {/* Right - Image */}

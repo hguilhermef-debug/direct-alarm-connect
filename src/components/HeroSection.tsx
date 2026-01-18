@@ -73,7 +73,7 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="mb-8"
+            className="mb-8 flex justify-center md:justify-start"
           >
             <WhatsAppButton variant="hero">
               Solicite seu Orçamento Agora
