@@ -15,8 +15,8 @@ export const WhatsAppButton = ({ variant = "primary", className = "", children }
   const baseStyles = "inline-flex items-center justify-center gap-2 font-bold text-white transition-all duration-300 cursor-pointer whitespace-nowrap";
   
   const variants = {
-    primary: "px-6 py-4 rounded-lg text-base md:text-lg shadow-lg hover:shadow-xl hover:scale-105 animate-subtle-glow",
-    hero: "px-8 py-5 rounded-xl text-lg md:text-xl shadow-2xl hover:scale-105 animate-subtle-glow",
+    primary: "px-6 py-4 rounded-lg text-base md:text-lg shadow-lg hover:shadow-xl hover:scale-105 shadow-[0_0_20px_4px_hsl(25_95%_53%_/_0.3)]",
+    hero: "px-8 py-5 rounded-xl text-lg md:text-xl shadow-2xl hover:scale-105 shadow-[0_0_25px_6px_hsl(25_95%_53%_/_0.35)]",
     floating: "w-16 h-16 rounded-full shadow-2xl hover:scale-110 fixed bottom-6 right-6 z-50 animate-subtle-glow",
   };
 
