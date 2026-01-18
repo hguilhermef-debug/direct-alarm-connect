@@ -5,7 +5,7 @@ import heroImage from "@/assets/hero-house-security.jpg";
 
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-hero">
+    <section className="relative h-screen flex items-center overflow-hidden bg-black">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
@@ -20,21 +20,6 @@ export const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-20 md:py-32">
         <div className="max-w-4xl">
-          {/* Offer Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-3 bg-gradient-to-r from-accent to-orange-600 text-white rounded-2xl sm:rounded-full px-4 sm:px-5 py-3 sm:py-2.5 mb-6 shadow-xl border border-orange-400/30"
-          >
-            <span className="font-bold text-base sm:text-lg flex items-center gap-2">
-              <span className="text-xl">🔥</span> OFERTA ESPECIAL
-            </span>
-            <span className="bg-white text-accent px-3 py-1.5 rounded-full text-xs sm:text-sm font-bold text-center leading-tight">
-              Equipamento Grátis + 50% OFF na Instalação
-            </span>
-          </motion.div>
-
           {/* Trust Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -56,7 +41,7 @@ export const HeroSection = () => {
             className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6"
           >
             Proteja sua casa ou empresa{" "}
-            <span className="text-gradient-orange">24 horas por dia</span> com monitoramento profissional
+            <span className="text-gradient-orange">24h por dia</span> com monitoramento humano
           </motion.h1>
 
           {/* Subheadline */}
@@ -70,11 +55,26 @@ export const HeroSection = () => {
             Tecnologia completa sem precisar comprar equipamentos.
           </motion.p>
 
+          {/* Offer Badge */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.25 }}
+            className="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-3 bg-gradient-to-r from-accent to-orange-600 text-white rounded-2xl sm:rounded-full px-4 sm:px-5 py-3 sm:py-2.5 mb-6 shadow-xl border border-orange-400/30"
+          >
+            <span className="font-bold text-base sm:text-lg flex items-center gap-2">
+              <span className="text-xl">🔥</span> OFERTA ESPECIAL
+            </span>
+            <span className="bg-white text-accent px-3 py-1.5 rounded-full text-xs sm:text-sm font-bold text-center leading-tight">
+              Equipamento Grátis + 50% OFF na Instalação
+            </span>
+          </motion.div>
+
           {/* CTA Button */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.35 }}
             className="mb-8"
           >
             <WhatsAppButton variant="hero">

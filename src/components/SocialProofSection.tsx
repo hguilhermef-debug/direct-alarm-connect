@@ -4,9 +4,9 @@ import { Users, Calendar, Headphones, MapPin } from "lucide-react";
 import familyImage from "@/assets/family-protected.jpg";
 
 const stats = [
-  { icon: Users, value: "+140.000", label: "Clientes atendidos" },
+  { icon: Users, value: "+140 mil", label: "Clientes atendidos" },
   { icon: Calendar, value: "30+", label: "Anos de experiência" },
-  { icon: Headphones, value: "3,5 mi", label: "Atendimentos por ano" },
+  { icon: Headphones, value: "3,5 mi", label: "Atendimentos/ano" },
   { icon: MapPin, value: "Brasil", label: "Atendimento nacional" },
 ];
 
@@ -26,7 +26,7 @@ export const SocialProofSection = () => {
               className="text-center p-6 rounded-2xl bg-primary border border-border hover:border-accent/50 transition-all duration-300"
             >
               <stat.icon className="w-8 h-8 text-accent mx-auto mb-3" />
-              <p className="text-3xl md:text-4xl font-extrabold text-white mb-1">
+              <p className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-1 whitespace-nowrap">
                 {stat.value}
               </p>
               <p className="text-white/60 text-sm">{stat.label}</p>
