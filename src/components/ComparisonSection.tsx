@@ -69,15 +69,15 @@ export const ComparisonSection = () => {
           {/* Table Container */}
           <div className="rounded-2xl border border-white/10 overflow-hidden bg-[hsl(var(--card-dark))]/50 backdrop-blur-sm">
             {/* Table Header */}
-            <div className="grid grid-cols-[1fr_1fr_1fr] bg-white/5 border-b border-white/10">
-              <div className="p-4 md:p-6">
-                <span className="text-white/50 text-sm font-medium uppercase tracking-wider">Recurso</span>
+            <div className="grid grid-cols-3 bg-white/5 border-b border-white/10">
+              <div className="p-3 md:p-6 flex items-center">
+                <span className="text-white/50 text-xs md:text-sm font-medium uppercase tracking-wider">Recurso</span>
               </div>
-              <div className="p-4 md:p-6 text-center border-x border-white/10 bg-accent/5">
-                <span className="text-accent font-bold text-lg">Emive</span>
+              <div className="p-3 md:p-6 flex items-center justify-center border-x border-white/10 bg-accent/5">
+                <span className="text-accent font-bold text-base md:text-lg">Emive</span>
               </div>
-              <div className="p-4 md:p-6 text-center">
-                <span className="text-white/40 font-medium">Outros</span>
+              <div className="p-3 md:p-6 flex items-center justify-center">
+                <span className="text-white/40 font-medium text-sm md:text-base">Outros</span>
               </div>
             </div>
 
@@ -89,31 +89,31 @@ export const ComparisonSection = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
-                className="grid grid-cols-[1fr_1fr_1fr] border-b border-white/5 last:border-b-0 hover:bg-white/[0.02] transition-colors"
+                className="grid grid-cols-3 border-b border-white/5 last:border-b-0 hover:bg-white/[0.02] transition-colors"
               >
                 {/* Feature Name */}
-                <div className="p-4 md:p-5 flex items-center min-h-[72px] md:min-h-0">
-                  <span className="text-white font-medium text-sm md:text-base">
+                <div className="p-3 md:p-5 flex items-center min-h-[80px] md:min-h-0">
+                  <span className="text-white font-medium text-sm md:text-base leading-tight">
                     {item.feature}
                   </span>
                 </div>
 
                 {/* Emive */}
-                <div className="p-4 md:p-5 flex items-center justify-center gap-3 border-x border-white/5 bg-accent/[0.03] min-h-[72px] md:min-h-0">
-                  <div className="w-7 h-7 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
+                <div className="p-3 md:p-5 flex items-center justify-center border-x border-white/5 bg-accent/[0.03] min-h-[80px] md:min-h-0">
+                  <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center">
                     <Check className="w-4 h-4 text-accent" />
                   </div>
-                  <span className="text-white/90 text-xs md:text-sm hidden md:block flex-1">
+                  <span className="text-white/90 text-xs md:text-sm hidden md:block flex-1 ml-3">
                     {item.emive}
                   </span>
                 </div>
 
                 {/* Competitor */}
-                <div className="p-4 md:p-5 flex items-center justify-center gap-3 min-h-[72px] md:min-h-0">
-                  <div className="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0">
+                <div className="p-3 md:p-5 flex items-center justify-center min-h-[80px] md:min-h-0">
+                  <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center">
                     <X className="w-4 h-4 text-white/30" />
                   </div>
-                  <span className="text-white/40 text-xs md:text-sm hidden md:block flex-1">
+                  <span className="text-white/40 text-xs md:text-sm hidden md:block flex-1 ml-3">
                     {item.competitor}
                   </span>
                 </div>

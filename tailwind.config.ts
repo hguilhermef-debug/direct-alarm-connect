@@ -81,9 +81,9 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "pulse-glow": {
-          "0%, 100%": { boxShadow: "0 0 20px 5px hsl(25 95% 53% / 0.4)" },
-          "50%": { boxShadow: "0 0 40px 15px hsl(25 95% 53% / 0.6)" },
+        "subtle-glow": {
+          "0%, 100%": { boxShadow: "0 0 15px 2px hsl(25 95% 53% / 0.25)" },
+          "50%": { boxShadow: "0 0 20px 4px hsl(25 95% 53% / 0.35)" },
         },
         "float": {
           "0%, 100%": { transform: "translateY(0px)" },
@@ -97,7 +97,7 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+        "subtle-glow": "subtle-glow 3s ease-in-out infinite",
         "float": "float 3s ease-in-out infinite",
         "shimmer": "shimmer 3s linear infinite",
       },
