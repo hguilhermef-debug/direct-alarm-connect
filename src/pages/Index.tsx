@@ -4,6 +4,7 @@ import { SegmentsSection } from "@/components/SegmentsSection";
 import { PainPointsSection } from "@/components/PainPointsSection";
 import { SolutionsSection } from "@/components/SolutionsSection";
 import { DifferentialsSection } from "@/components/DifferentialsSection";
+import { ComparisonSection } from "@/components/ComparisonSection";
 import { HowItWorksSection } from "@/components/HowItWorksSection";
 import { FinalCTASection } from "@/components/FinalCTASection";
 import { Footer } from "@/components/Footer";
@@ -53,6 +54,7 @@ const Index = () => {
         <PainPointsSection />
         <SolutionsSection />
         <DifferentialsSection />
+        <ComparisonSection />
         <HowItWorksSection />
         <FinalCTASection />
         <Footer />
